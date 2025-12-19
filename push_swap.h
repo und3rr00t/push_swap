@@ -1,18 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oused-da <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/19 17:04:14 by oused-da          #+#    #+#             */
+/*   Updated: 2025/12/19 17:04:16 by oused-da         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-#ifndef INT_MAX 
-# define INT_MAX 2147483647
-#endif
-#ifndef INT_MIN 
-# define INT_MIN -2147483648
-#endif
+
+# ifndef INT_MAX
+#  define INT_MAX 2147483647
+# endif
+
+# ifndef INT_MIN
+#  define INT_MIN -2147483648
+# endif
 
 # include "libft/libft.h"
 # include "ft_printf/ft_printf.h"
 
 int		valid_num(char *arg);
 int		check_dup(t_list *a, int num);
-void	del(void* content);
+void	del(void *content);
 void	sa(t_list **a);
 void	sb(t_list **b);
 void	ss(t_list **a, t_list **b);

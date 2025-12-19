@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rotate.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oused-da <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/19 17:04:37 by oused-da          #+#    #+#             */
+/*   Updated: 2025/12/19 17:04:39 by oused-da         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static void	rotate(t_list **stack)
@@ -10,8 +22,8 @@ static void	rotate(t_list **stack)
 	tail = *stack;
 	while (tail->next)
 		tail = tail->next;
-    tail->next = tmp;
-    tmp->next = NULL;
+	tail->next = tmp;
+	tmp->next = NULL;
 }
 
 void	ra(t_list **a)

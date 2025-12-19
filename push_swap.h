@@ -8,10 +8,13 @@
 #endif
 
 # include "libft/libft.h"
-# include <stdio.h>
+# include "ft_printf/ft_printf.h"
 
 int		valid_num(char *arg);
 int		check_dup(t_list *a, int num);
 void	del(void* content);
+void	sa(t_list **a);
+void	sb(t_list **b);
+void	ss(t_list **a, t_list **b);
 
 #endif

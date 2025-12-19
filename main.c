@@ -5,6 +5,7 @@ int main(int c, char **v)
 	if (c == 1)
 		return 0;
 	t_list *a = NULL;
+	t_list *b = NULL;
 	t_list *n;
 	int i = 1;
 	long val;
@@ -34,7 +35,7 @@ int main(int c, char **v)
 		if (!cont)
 		{
 			ft_lstclear(&a, del);
-			return 0;
+			return (1);
 		}
 		*cont = (int)val;
 		n = ft_lstnew(cont);
@@ -47,13 +48,48 @@ int main(int c, char **v)
 		ft_lstadd_back(&a, n);
 		i++;
 	}
-	t_list *tmp = a;
-	while (tmp != NULL)
-	{
-		printf("| %d |->", *(int *)tmp->content);
-		tmp=tmp->next;
-	}
-	printf("| NULL |\n");
-	ft_lstclear(&a, del);
+	if (a)
+    {
+        t_list *temp = a;
+        a = a->next;
+        temp->next = b;
+        b = temp;
+    }
+
+    if (a)
+    {
+        t_list *temp = a;
+        a = a->next;
+        temp->next = b; 
+        b = temp;      
+    }
+
+    ft_printf("\n=== BEFORE SS ===\n");
+    ft_printf("Stack A: ");
+    t_list *tmp_a = a;
+    while (tmp_a) { ft_printf("| %d |->", *(int*)tmp_a->content); tmp_a = tmp_a->next; }
+    ft_printf("NULL\n");
+
+    ft_printf("Stack B: ");
+    t_list *tmp_b = b;
+    while (tmp_b) { ft_printf("| %d |->", *(int*)tmp_b->content); tmp_b = tmp_b->next; }
+    ft_printf("NULL\n");
+
+    ss(&a, &b); 
+
+
+    ft_printf("\n=== AFTER SS ===\n");
+    ft_printf("Stack A: ");
+    tmp_a = a;
+    while (tmp_a) { ft_printf("| %d |->", *(int*)tmp_a->content); tmp_a = tmp_a->next; }
+    ft_printf("NULL\n");
+
+    ft_printf("Stack B: ");
+    tmp_b = b;
+    while (tmp_b) { ft_printf("| %d |->", *(int*)tmp_b->content); tmp_b = tmp_b->next; }
+    ft_printf("NULL\n");
+
+    ft_lstclear(&a, del);
+    ft_lstclear(&b, del);
 	return 0;
 }

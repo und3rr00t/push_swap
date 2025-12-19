@@ -64,7 +64,7 @@ int main(int c, char **v)
         b = temp;      
     }
 
-    ft_printf("\n=== BEFORE SS ===\n");
+    ft_printf("\n=== BEFORE ===\n");
     ft_printf("Stack A: ");
     t_list *tmp_a = a;
     while (tmp_a) { ft_printf("| %d |->", *(int*)tmp_a->content); tmp_a = tmp_a->next; }
@@ -88,7 +88,29 @@ int main(int c, char **v)
     tmp_b = b;
     while (tmp_b) { ft_printf("| %d |->", *(int*)tmp_b->content); tmp_b = tmp_b->next; }
     ft_printf("NULL\n");
+	pa(&a, &b);
+	ft_printf("\n=== AFTER pa ===\n");
+    ft_printf("Stack A: ");
+    tmp_a = a;
+    while (tmp_a) { ft_printf("| %d |->", *(int*)tmp_a->content); tmp_a = tmp_a->next; }
+    ft_printf("NULL\n");
 
+    ft_printf("Stack B: ");
+    tmp_b = b;
+    while (tmp_b) { ft_printf("| %d |->", *(int*)tmp_b->content); tmp_b = tmp_b->next; }
+    ft_printf("NULL\n");
+
+	pb(&a, &b);
+	ft_printf("\n=== AFTER pb ===\n");
+    ft_printf("Stack A: ");
+    tmp_a = a;
+    while (tmp_a) { ft_printf("| %d |->", *(int*)tmp_a->content); tmp_a = tmp_a->next; }
+    ft_printf("NULL\n");
+
+    ft_printf("Stack B: ");
+    tmp_b = b;
+    while (tmp_b) { ft_printf("| %d |->", *(int*)tmp_b->content); tmp_b = tmp_b->next; }
+    ft_printf("NULL\n");
     ft_lstclear(&a, del);
     ft_lstclear(&b, del);
 	return 0;

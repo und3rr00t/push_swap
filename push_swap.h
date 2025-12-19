@@ -16,5 +16,7 @@ void	del(void* content);
 void	sa(t_list **a);
 void	sb(t_list **b);
 void	ss(t_list **a, t_list **b);
+void	pa(t_list **a, t_list**b);
+void	pb(t_list **a, t_list**b);
 
 #endif

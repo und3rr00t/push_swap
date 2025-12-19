@@ -1,15 +1,15 @@
 #include "push_swap.h"
 
-static void swap(t_list **target)
+static void swap(t_list **stack)
 {
 	t_list	*fst;
 	t_list	*snd;
 
-	fst = *target;
+	fst = *stack;
 	snd = fst->next;
 	fst->next = snd->next;
 	snd->next = fst;
-	*target = snd;
+	*stack = snd;
 }
 void	sa(t_list **a)
 {

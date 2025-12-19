@@ -111,6 +111,29 @@ int main(int c, char **v)
     tmp_b = b;
     while (tmp_b) { ft_printf("| %d |->", *(int*)tmp_b->content); tmp_b = tmp_b->next; }
     ft_printf("NULL\n");
+	rr(&a, &b);
+	ft_printf("\n=== AFTER rr ===\n");
+    ft_printf("Stack A: ");
+    tmp_a = a;
+    while (tmp_a) { ft_printf("| %d |->", *(int*)tmp_a->content); tmp_a = tmp_a->next; }
+    ft_printf("NULL\n");
+
+    ft_printf("Stack B: ");
+    tmp_b = b;
+    while (tmp_b) { ft_printf("| %d |->", *(int*)tmp_b->content); tmp_b = tmp_b->next; }
+    ft_printf("NULL\n");
+	rrr(&a, &b);
+	ft_printf("\n=== AFTER rrr ===\n");
+    ft_printf("Stack A: ");
+    tmp_a = a;
+    while (tmp_a) { ft_printf("| %d |->", *(int*)tmp_a->content); tmp_a = tmp_a->next; }
+    ft_printf("NULL\n");
+
+    ft_printf("Stack B: ");
+    tmp_b = b;
+    while (tmp_b) { ft_printf("| %d |->", *(int*)tmp_b->content); tmp_b = tmp_b->next; }
+    ft_printf("NULL\n");
+
     ft_lstclear(&a, del);
     ft_lstclear(&b, del);
 	return 0;

@@ -45,3 +45,39 @@ void	del(void *content)
 {
 	free(content);
 }
+
+void	free_split(char **args)
+{
+	int	i;
+
+	i = 0;
+	if (!args)
+		return ;
+	while (args[i])
+	{
+		free(args[i]);
+		i++;
+	}
+	free(args);
+}
+
+int	add_to_stack(t_list **a, int n)
+{
+	t_list	*new_node;
+	int		*content;
+
+	if (check_dup(*a, n))
+		return (0);
+	content = malloc(sizeof(int));
+	if (!content)
+		return (0);
+	*content = n;
+	new_node = ft_lstnew(content);
+	if (!new_node)
+	{
+		free(content);
+		return (0);
+	}
+	ft_lstadd_back(a, new_node);
+	return (1);
+}

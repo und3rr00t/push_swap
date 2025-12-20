@@ -38,5 +38,13 @@ void	rr(t_list **a, t_list **b);
 void	rra(t_list **a);
 void	rrb(t_list **b);
 void	rrr(t_list **a, t_list **b);
+int		add_to_stack(t_list **a, int n);
+void	free_split(char **args);
+t_list	*parse_args(int argc, char **argv);
+void	sort_stack(t_list **a, t_list **b);
+int		get_max_index(t_list *a);
+void	sort_three(t_list **a);
+int		check_sorted(t_list *stack_a);
+
 
 #endif

@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int check_sorted(t_list *stack_a)
+int	check_sorted(t_list *stack_a)
 {
 	while (stack_a && stack_a->next)
 	{
@@ -23,11 +23,11 @@ int check_sorted(t_list *stack_a)
 	return (1);
 }
 
-int get_max_index(t_list *a)
+int	get_max_index(t_list *a)
 {
-	int i = 0;
-	int max_i = 0;
-	int max_val;
+	int	i = 0;
+	int	max_i = 0;
+	int	max_val;
 
 	if (!a) return (-1);
 	max_val = *(int *)a->content;
@@ -44,9 +44,9 @@ int get_max_index(t_list *a)
 	return (max_i);
 }
 
-void sort_three(t_list **a)
+void	sort_three(t_list **a)
 {
-	int max_pos;
+	int	max_pos;
 
 	max_pos = get_max_index(*a);
 	if (max_pos == 0)
@@ -57,13 +57,13 @@ void sort_three(t_list **a)
 		sa(a);
 }
 
-void    sort_stack(t_list **a, t_list **b)
+void	sort_stack(t_list **a, t_list **b)
 {
-	int size;
+	int	size;
 
 	size = ft_lstsize(*a);
 	if (size <= 1)
-		return;
+		return ;
 	if (check_sorted(*a))
 		return ;
 	if (size == 2)

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   radix.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oused-da <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/22 05:27:02 by oused-da          #+#    #+#             */
+/*   Updated: 2025/12/22 05:27:06 by oused-da         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static int	get_max_bits(t_list **stack)
@@ -28,8 +40,7 @@ void	radix_sort(t_list **a, t_list **b)
 	int		size;
 	int		max_bits;
 
-	index_stack(a); 
-
+	index_stack(a);
 	size = ft_lstsize(*a);
 	max_bits = get_max_bits(a);
 	i = 0;

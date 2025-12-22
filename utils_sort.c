@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils_sort.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oused-da <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/22 05:27:15 by oused-da          #+#    #+#             */
+/*   Updated: 2025/12/22 05:27:17 by oused-da         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	val(t_list *node)
 {
-	return (*(int*)node->content);
+	return (*(int *) node->content);
 }
 
 void	index_stack(t_list **stack)
@@ -15,7 +27,8 @@ void	index_stack(t_list **stack)
 
 	size = ft_lstsize(*stack);
 	new_values = malloc(sizeof(int) * size);
-	if (!new_values) return;
+	if (!new_values)
+		return ;
 	ptr = *stack;
 	i = 0;
 	while (ptr)

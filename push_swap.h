@@ -45,6 +45,8 @@ void	sort_stack(t_list **a, t_list **b);
 int		get_max_index(t_list *a);
 void	sort_three(t_list **a);
 int		check_sorted(t_list *stack_a);
-
+void	radix_sort(t_list **a, t_list **b);
+int		val(t_list *node);
+void	index_stack(t_list **stack);
 
 #endif

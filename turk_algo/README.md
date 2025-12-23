@@ -9,7 +9,7 @@ make clean
 ### my test
 
 ```Bash
-leet% make re
+make re
 ```
 ```
 rm -f main.o parse_args.o push.o swap.o rotate.o reverse_rotate.o utils.o sort.o turk_sort.o turk_utils.o turk_cost.o turk_move.o

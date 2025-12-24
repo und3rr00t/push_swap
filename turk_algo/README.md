@@ -95,7 +95,7 @@ make[1]: Leaving directory '/home/und3rr00t/push_swap/turk_algo/ft_printf'
 cc -Wall -Wextra -Werror main.o parse_args.o push.o swap.o rotate.o reverse_rotate.o utils.o sort.o turk_sort.o turk_utils.o turk_cost.o turk_move.o -L./libft -lft -L./ft_printf -lftprintf -o push_swap
 ```
 ```Bash
-make clean
+❯ make clean
 ```
 ```Bash
 # Testing 500 args in fewer than 5500 moves :

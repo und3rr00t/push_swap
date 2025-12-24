@@ -102,12 +102,24 @@ Since Radix Sort relies on bit-level passes, the number of moves is relatively c
 
 ## Project Structure :
 
-| Stack Size | Radix Moves (Approx) | Limit (100%) | Status |
-| :--- | :---: | :---: | :---: |
-| **3 Numbers** | < 3 | 3 | ✅ |
-| **5 Numbers** | < 12 | 12 | ✅ |
-| **100 Numbers** | ~1050 | 700 | ⚠️ (See Note) |
-| **500 Numbers** | ~6700 | 5500 | ⚠️ (See Note) |
+```bash
+.
+├── libft/              # Libft library (helpers)
+├── ft_printf/          # Printf library (logging)
+├── Makefile            # Compilation rules
+├── README.md           # Documentation
+├── push_swap.h         # Main header file
+├── main.c              # Entry point
+├── parse_args.c        # Input parsing & validation
+├── radix.c             # Radix sort logic
+├── sort.c              # Sorting decision hub
+├── utils.c             # General helpers (del, free_split...)
+├── utils_sort.c        # Indexing helpers for Radix
+├── push.c              # Push instructions (pa, pb)
+├── swap.c              # Swap instructions (sa, sb, ss)
+├── rotate.c            # Rotate instructions (ra, rb, rr)
+└── reverse_rotate.c    # Reverse rotate instructions (rra, rrb, rrr)
+```
 
 ## Author :
 

@@ -1,15 +1,15 @@
 ## testing
 
 ```Bash
-make
-make clean
-./push_swap <args>
+❯ make
+❯ make clean
+❯ ./push_swap <args>
 ```
 
 ### my test
 
 ```Bash
-make re
+❯ make re
 ```
 ```Bash
 rm -f main.o parse_args.o push.o swap.o rotate.o reverse_rotate.o utils.o sort.o turk_sort.o turk_utils.o turk_cost.o turk_move.o
@@ -99,7 +99,7 @@ make clean
 ```
 ```Bash
 # Testing 500 args in fewer than 5500 moves :
-ARG=`ruby -e "puts (1..500).to_a.shuffle.join(' ')"`; ./push_swap $ARG | wc -l
+❯ ARG=`ruby -e "puts (1..500).to_a.shuffle.join(' ')"`; ./push_swap $ARG | wc -l
 ```
 
 ```Bash

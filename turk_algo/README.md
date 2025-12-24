@@ -137,7 +137,7 @@ ARG=`ruby -e "puts (1..500).to_a.shuffle.join(' ')"`; ./push_swap $ARG | wc -l
 ### memory leaks check
 
 ```Bash
-ARG=$(shuf -i 0-5000 -n 500 | tr '\n' ' '); valgrind ./push_swap $ARG | wc -l
+❯ ARG=$(shuf -i 0-5000 -n 500 | tr '\n' ' '); valgrind ./push_swap $ARG | wc -l
 ==312171== Memcheck, a memory error detector
 ==312171== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
 ==312171== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info

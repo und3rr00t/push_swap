@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oused-da <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: oused-da <oused-da@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 16:53:13 by oused-da          #+#    #+#             */
-/*   Updated: 2025/07/28 04:11:51 by oused-da         ###   ########.fr       */
+/*   Updated: 2025/12/25 17:08:59 by oused-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "libft.h"
 
 int	ft_strcmp(char *s1, char *s2)
 {

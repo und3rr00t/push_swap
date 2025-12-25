@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oused-da <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: oused-da <oused-da@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/25 09:55:32 by oused-da          #+#    #+#             */
-/*   Updated: 2025/12/25 09:55:34 by oused-da         ###   ########.fr       */
+/*   Updated: 2025/12/25 17:22:26 by oused-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,5 @@ int		check_dup(t_list *a, int num);
 void	del(void *content);
 void	free_split(char **args);
 int		add_to_stack(t_list **a, int n);
-
-// libft
-int		ft_strcmp(char *s1, char *s2);
 
 #endif

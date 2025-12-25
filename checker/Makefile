@@ -1,38 +1,29 @@
+
 NAME = checker
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-SRC = main.c \
-      parse_args.c \
-      push.c swap.c rotate.c reverse_rotate.c \
-      checker.c \
-	  utils.c \
-      ft_strcmp.c \
+SRC = main.c parse_args.c push.c swap.c rotate.c reverse_rotate.c utils.c checker.c \
+	  libft/ft_atoi.c libft/ft_lstadd_back.c libft/ft_lstclear.c libft/ft_lstnew.c libft/ft_lstsize.c \
+	  libft/ft_memcpy.c libft/ft_putchar_fd.c libft/ft_putstr_fd.c libft/ft_split.c libft/ft_strlen.c \
+	  libft/ft_isdigit.c libft/ft_lstlast.c libft/ft_strcmp.c \
+	  ft_printf/ft_printf_hex_ptr.c ft_printf/ft_printf_utils.c ft_printf/ft_printf.c \
 	  gnl/get_next_line.c gnl/get_next_line_utils.c
 OBJ = $(SRC:.c=.o)
-LIBFT_DIR = ./libft
-LIBFT = $(LIBFT_DIR)/libft.a
-FTPF_DIR=./ft_printf
-FTPF=$(FTPF_DIR)/libftprintf.a
+
 all: $(NAME)
 
 $(NAME): $(OBJ) $(LIBFT) $(FTPF)
-	$(CC) $(CFLAGS) $(OBJ) -L$(LIBFT_DIR) -lft -L$(FTPF_DIR) -lftprintf -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
-$(LIBFT):
-	@make -C $(LIBFT_DIR) bonus
-$(FTPF):
-	@make -C $(FTPF_DIR)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJ)
-	@make -C $(LIBFT_DIR) clean
-	@make -C $(FTPF_DIR) clean
+
 fclean: clean
 	rm -f $(NAME)
-	@make -C $(LIBFT_DIR) fclean
-	@make -C $(FTPF_DIR) fclean
+
 re: fclean all
 
 .PHONY: clean

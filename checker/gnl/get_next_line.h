@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oused-da <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: oused-da <oused-da@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 15:48:14 by oused-da          #+#    #+#             */
-/*   Updated: 2025/11/27 15:48:22 by oused-da         ###   ########.fr       */
+/*   Updated: 2025/12/25 17:27:27 by oused-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 # endif
 
 char	*get_next_line(int fd);
-size_t	ft_strlen(const char *s);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strjoin(char *s1, char *s2);
 

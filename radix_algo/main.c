@@ -14,20 +14,20 @@
 
 int main(int argc, char **argv)
 {
-    t_list  *a;
-    t_list  *b;
+	t_list  *a;
+	t_list  *b;
 
-    if (argc < 2)
-        return (0);
-    a = parse_args(argc, argv);
-    if (!a)
-    {
-        ft_putstr_fd("Error\n", 2);
-        return (1);
-    }
-    b = NULL;
-    sort_stack(&a, &b);
-    ft_lstclear(&a, del);
-    ft_lstclear(&b, del);
-    return (0);
+	if (argc < 2)
+		return (0);
+	a = parse_args(argc, argv);
+	if (!a)
+	{
+		ft_putstr_fd("Error\n", 2);
+		return (1);
+	}
+	b = NULL;
+	sort_stack(&a, &b);
+	ft_lstclear(&a, del);
+	ft_lstclear(&b, del);
+	return (0);
 }

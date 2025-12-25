@@ -6,7 +6,7 @@
 /*   By: oused-da <oused-da@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/25 16:17:28 by oused-da          #+#    #+#             */
-/*   Updated: 2025/12/25 17:07:54 by oused-da         ###   ########.fr       */
+/*   Updated: 2025/12/25 17:50:46 by oused-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ft_putstr_fd(char *s, int fd);
 t_list	*ft_lstnew(void *content);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
-int		ft_lstsize(t_list *lst);
+// int		ft_lstsize(t_list *lst);
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 t_list	*ft_lstlast(t_list *lst);
 int		ft_strcmp(char *s1, char *s2);

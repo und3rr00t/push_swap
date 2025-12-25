@@ -9,7 +9,7 @@
 ## About The Project
 **Push_swap** is a 42 School algorithm project where we must sort a stack of integers using two stacks (`A` and `B`) and a limited set of instructions. The goal is to sort the numbers with the **minimum number of operations** possible.
 
-This project implements the **Butterfly Algorithm** (also known as Range Sort), which is highly efficient for large datasets (100 and 500 numbers).
+This project implements the **Butterfly Algorithm** (also known as Range Sort), which is highly efficient for large datasets.
 
 ---
 

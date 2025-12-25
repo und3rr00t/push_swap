@@ -1,0 +1,55 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oused-da <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/19 17:04:29 by oused-da          #+#    #+#             */
+/*   Updated: 2025/12/19 17:04:31 by oused-da         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "checker.h"
+
+static void	reverse_rotate(t_list **stack)
+{
+	t_list	*tail;
+	t_list	*before_tail;
+
+	tail = *stack;
+	before_tail = NULL;
+	while (tail->next)
+	{
+		before_tail = tail;
+		tail = tail->next;
+	}
+	tail->next = *stack;
+	*stack = tail;
+	before_tail->next = NULL;
+}
+
+void	rra(t_list **a)
+{
+	if (!a || !(*a) || !((*a)->next))
+		return ;
+	reverse_rotate(a);
+}
+
+void	rrb(t_list **b)
+{
+	if (!b || !(*b) || !((*b)->next))
+		return ;
+	reverse_rotate(b);
+}
+
+void	rrr(t_list **a, t_list **b)
+{
+	if ((a && *a && (*a)->next) || (b && *b && (*b)->next))
+	{
+		if (a && *a && (*a)->next)
+			reverse_rotate(a);
+		if (b && *b && (*b)->next)
+			reverse_rotate(b);
+	}
+}

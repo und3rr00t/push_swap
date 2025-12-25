@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oused-da <oused-da@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/25 16:22:56 by oused-da          #+#    #+#             */
+/*   Updated: 2025/12/25 16:26:03 by oused-da         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -13,7 +25,6 @@
 # include "libft/libft.h"
 # include "ft_printf/ft_printf.h"
 
-/* Parsing & Utils */
 int		valid_num(char *arg);
 int		check_dup(t_list *a, int num);
 void	del(void *content);
@@ -21,7 +32,6 @@ int		add_to_stack(t_list **a, int n);
 void	free_split(char **args);
 t_list	*parse_args(int argc, char **argv);
 
-/* Instructions */
 void	sa(t_list **a);
 void	sb(t_list **b);
 void	ss(t_list **a, t_list **b);
@@ -34,23 +44,10 @@ void	rra(t_list **a);
 void	rrb(t_list **b);
 void	rrr(t_list **a, t_list **b);
 
-/* Sorting Logic */
 int		check_sorted(t_list *stack_a);
 void	sort_stack(t_list **a, t_list **b);
 void	sort_three(t_list **a);
-void	turk_sort(t_list **a, t_list **b);
 
-/* Turk Algorithm Utils */
-void	set_current_index(t_list *stack);
-void	set_target_a(t_list *a, t_list *b);
-void	set_target_b(t_list *b, t_list *a);
-void	cost_analysis_a(t_list *a, t_list *b, int limit);
-void	move_a_to_b(t_list **a, t_list **b);
-void	move_b_to_a(t_list **a, t_list **b);
-void	finish_rotation(t_list **stack, t_list *top_node, char stack_name);
-t_list	*find_min(t_list *stack);
-t_list	*find_max(t_list *stack);
-t_list	*get_cheapest(t_list *stack);
-void	init_ranks(t_list *stack);
+void	butterfly_sort(t_list **a, t_list **b);
 
 #endif

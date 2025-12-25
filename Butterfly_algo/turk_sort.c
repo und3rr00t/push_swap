@@ -1,16 +1,36 @@
 /* ************************************************************************** */
 /* */
-/* turk_sort.c (BUTTERFLY ALGORITHM)                                       */
+/* turk_sort.c (Optimized Butterfly)                                        */
 /* */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int get_pos_in_stack(t_list *stack, int rank)
+static void local_init_ranks(t_list *stack)
 {
-    int i;
+    t_list  *ptr;
+    t_list  *compare;
+    int     rank;
 
-    i = 0;
+    ptr = stack;
+    while (ptr)
+    {
+        rank = 0;
+        compare = stack;
+        while (compare)
+        {
+            if (*(int *)compare->content < *(int *)ptr->content)
+                rank++;
+            compare = compare->next;
+        }
+        ptr->rank = rank;
+        ptr = ptr->next;
+    }
+}
+
+static int get_pos(t_list *stack, int rank)
+{
+    int i = 0;
     while (stack)
     {
         if (stack->rank == rank)
@@ -23,22 +43,24 @@ static int get_pos_in_stack(t_list *stack, int rank)
 
 void    turk_sort(t_list **a, t_list **b)
 {
-    int i;
+    int i = 0;
     int range;
     int size;
 
+    if (!a || !*a) return;
+    local_init_ranks(*a);
     size = ft_lstsize(*a);
-    init_ranks(*a);
-    if (size > 100)
-        range = 34;
-    else
+    if (size <= 100)
         range = 15;
-    i = 0;
+    else
+        range = 35;
+    while (*a)
     {
         if ((*a)->rank <= i)
         {
             pb(a, b);
-            rb(b);
+            if (ft_lstsize(*b) > 1) 
+                rb(b); 
             i++;
         }
         else if ((*a)->rank <= i + range)
@@ -47,17 +69,25 @@ void    turk_sort(t_list **a, t_list **b)
             i++;
         }
         else
+        {
             ra(a);
+        }
     }
+
     int max_rank = size - 1;
     int pos;
-    int size_b;
-
+    
     while (*b)
     {
-        pos = get_pos_in_stack(*b, max_rank);
-        size_b = ft_lstsize(*b);
-        if (pos <= size_b / 2)
+        pos = get_pos(*b, max_rank);
+        
+        if (pos == -1) 
+        {
+            max_rank--;
+            continue;
+        }
+
+        if (pos <= ft_lstsize(*b) / 2)
         {
             while ((*b)->rank != max_rank)
                 rb(b);
@@ -67,6 +97,7 @@ void    turk_sort(t_list **a, t_list **b)
             while ((*b)->rank != max_rank)
                 rrb(b);
         }
+        
         pa(a, b);
         max_rank--;
     }

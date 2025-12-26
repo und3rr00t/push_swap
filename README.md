@@ -46,6 +46,23 @@ The repository includes a custom **Checker** program. Its purpose is to validate
 
 ---
 
+##  Visualizer
+To help understand the logic behind the algorithms (especially the Butterfly curve), this repository includes custom Python visualizers.
+
+### 1. GUI Visualizer (`gui_visualizer.py`)
+A graphical window using `tkinter` that uses color gradients to show the stack distribution.
+* **Blue:** Small numbers (Bottom of the "wings").
+* **Red:** Large numbers (Top of the "wings").
+* **Run:** `python3 gui_visualizer.py`
+
+### 2. TUI Visualizer (`visualizer.py`)
+A simple text-based bar chart that runs directly in your terminal.
+* **Run:** `python3 visualizer.py`
+
+*Note: You can adjust `STACK_SIZE` and `SPEED` inside the python scripts.*
+
+---
+
 ##  Instruction Set
 The project is restricted to the following operations:
 

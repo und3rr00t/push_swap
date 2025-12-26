@@ -55,7 +55,7 @@ A graphical window using `tkinter` that uses color gradients to show the stack d
 * **Red:** Large numbers (Top of the "wings").
 * **Run:** `python3 gui_visualizer.py`
 
-### 2. TUI Visualizer (`visualizer.py`)
+### 2. TUI Visualizer (`tui_visualizer.py`)
 A simple text-based bar chart that runs directly in your terminal.
 * **Run:** `python3 visualizer.py`
 
